@@ -1,6 +1,6 @@
 /**
  * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
+ * @returns {Knex.SchemaBuilder}
  */
 exports.up = function(knex) {
         return knex.schema.createTable("menus_has_products", (table) => {
