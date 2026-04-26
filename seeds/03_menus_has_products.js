@@ -4,8 +4,6 @@
  */
 exports.seed = async function(knex) {
 
-    // Supprime tout
-    await knex('menus_has_products').del();
 
     // Insert relations menu <-> produits
     await knex('menus_has_products').insert([

@@ -4,9 +4,6 @@
  */
 exports.seed = async function(knex) {
 
-    // Supprime tout
-    await knex('products').del();
-
     // Reset auto increment
     await knex.raw('ALTER TABLE products AUTO_INCREMENT = 1');
 

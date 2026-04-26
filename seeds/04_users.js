@@ -6,8 +6,6 @@ exports.seed = async function(knex) {
 
     const password = "$2b$10$bb2z8ga0U6BUaj4K2BvZduIgK.4WTr2H7msCmV9ktK3isx8qAXRc.";
 
-    // Supprime tout
-    await knex('users').del();
 
     // Reset auto increment
     await knex.raw('ALTER TABLE users AUTO_INCREMENT = 1');
