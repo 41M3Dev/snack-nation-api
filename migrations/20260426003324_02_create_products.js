@@ -12,8 +12,8 @@ exports.up = function(knex) {
         table.string('image',255);
         table.tinyint('has_size_option').notNullable().defaultTo(0);
         table.tinyint('is_available').defaultTo(1);
-        table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
-        table.timestamp('updated_at').defaultTo(knex.fn.now());
+        table.datetime('created_at').notNullable().defaultTo(knex.fn.now());
+        table.datetime('updated_at').defaultTo(knex.fn.now());
     })
 };
 

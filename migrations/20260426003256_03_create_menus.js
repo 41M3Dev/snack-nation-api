@@ -8,8 +8,8 @@ exports.up = function(knex) {
         table.string('name', 150).notNullable();
         table.decimal('price_base', 10, 2).notNullable();
         table.tinyint('is_active').notNullable().defaultTo(1);
-        table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
-        table.timestamp('updated_at').defaultTo(knex.fn.now());
+        table.datetime('created_at').notNullable().defaultTo(knex.fn.now());
+        table.datetime('updated_at').defaultTo(knex.fn.now());
     });
 };
 

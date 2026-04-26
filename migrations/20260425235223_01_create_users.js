@@ -10,8 +10,8 @@ exports.up = function(knex) {
         table.string("password",255).notNullable();
         table.enum('role', ['Administration', 'Préparation', 'Accueil']).notNullable();
         table.tinyint('is_active').defaultTo(1);
-        table.timestamp('created_at').defaultTo(knex.fn.now());
-        table.timestamp('updated_at').defaultTo(knex.fn.now());
+        table.datetime('created_at').defaultTo(knex.fn.now());
+        table.datetime('updated_at').defaultTo(knex.fn.now());
     })
 };
 
