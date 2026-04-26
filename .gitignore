@@ -14,3 +14,4 @@ logs/
 # Système
 .DS_Store
 Thumbs.db
+/test-env.js
