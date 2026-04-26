@@ -14,7 +14,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/41M3Dev/snack-nation-api/issues"
   },
@@ -22,13 +21,13 @@
   "dependencies": {
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
+    "dotenv": "^16.4.5",
     "express": "^5.2.1",
     "express-rate-limit": "^8.4.1",
     "express-validator": "^7.3.2",
     "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.3",
-    "knex": "^3.2.9",
+    "knex": "^3.1.0",
     "morgan": "^1.10.1",
     "mysql2": "^3.22.2",
     "xss-clean": "^0.1.4"
