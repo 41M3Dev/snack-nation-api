@@ -1,10 +1,12 @@
 require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
 const app = express();
-app.use(express.json());
 const authRoutes = require('./src/routes/auth');
-app.use('/api/auth', authRoutes);
+const productRoutes = require('./src/routes/products');
 
+app.use(express.json());
+app.use('/api/auth', authRoutes);
+app.use('/api/products', productRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
