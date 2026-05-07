@@ -7,5 +7,8 @@ class UserModel extends BaseModel {
     findByEmail(email) {
         return this.db(this.tableName).where({ email }).first();
     }
+    findAllActive() {
+        return this.db(this.tableName).where({ is_active: 1 });
+    }
 }
 module.exports = new UserModel();
