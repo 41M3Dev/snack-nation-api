@@ -11,7 +11,10 @@ const getAllAdmin = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -23,7 +26,10 @@ const getById = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                error: 'Utilisateur non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Utilisateur non trouvé',
+                },
             });
         }
 
@@ -34,7 +40,10 @@ const getById = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -46,7 +55,10 @@ const getByEmail = async (req, res) => {
         if (!user) {
             return res.status(404).json({
                 success: false,
-                error: 'Email disponible',
+                error: {
+                    code: 404,
+                    message: 'Email disponible',
+                },
             });
         }
 
@@ -57,7 +69,10 @@ const getByEmail = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -69,7 +84,10 @@ const create = async (req, res) => {
         if (existingUser) {
             return res.status(409).json({
                 success: false,
-                error: 'Cet email existe déjà',
+                error: {
+                    code: 409,
+                    message: 'Cet email existe déjà',
+                },
             });
         }
 
@@ -92,7 +110,10 @@ const create = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -103,7 +124,10 @@ const update = async (req, res) => {
         if (!updated) {
             return res.status(404).json({
                 success: false,
-                error: 'Utilisateur non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Utilisateur non trouvé',
+                },
             });
         }
 
@@ -116,7 +140,10 @@ const update = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -130,7 +157,10 @@ const remove = async (req, res) => {
         if (!deleted) {
             return res.status(404).json({
                 success: false,
-                error: 'Utilisateur non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Utilisateur non trouvé',
+                },
             });
         }
 
@@ -143,7 +173,10 @@ const remove = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
