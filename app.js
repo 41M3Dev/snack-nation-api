@@ -1,5 +1,6 @@
 require('dotenv').config({ path: __dirname + '/.env' });
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 const authRoutes = require('./src/routes/auth');
@@ -9,6 +10,7 @@ const userRoutes = require('./src/routes/users');
 const orderRoutes = require('./src/routes/orders');
 const customerRoutes = require('./src/routes/customers');
 
+app.use(cors());
 app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
