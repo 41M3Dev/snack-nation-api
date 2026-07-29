@@ -67,12 +67,15 @@ const create = async (req, res) => {
             phone: req.body.phone,
         });
 
+        const newCustomer = await CustomerModel.findById(result[0]);
         return res.status(201).json({
             success: true,
             data: {
-                id: result[0],
-                firstname: req.body.firstname,
-                phone: req.body.phone,
+                id: newCustomer.id,
+                firstname: newCustomer.firstname,
+                phone: newCustomer.phone,
+                points_balance: newCustomer.points_balance,
+                created_at: newCustomer.created_at,
             },
         });
     } catch (error) {
