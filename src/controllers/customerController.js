@@ -11,7 +11,10 @@ const getAll = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -23,7 +26,10 @@ const getByPhone = async (req, res) => {
         if (!customer) {
             return res.status(404).json({
                 success: false,
-                error: 'Client non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Client non trouvé',
+                },
             });
         }
 
@@ -34,7 +40,10 @@ const getByPhone = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -46,7 +55,10 @@ const create = async (req, res) => {
         if (existingCustomer) {
             return res.status(409).json({
                 success: false,
-                error: 'Ce numéro de téléphone existe déjà',
+                error: {
+                    code: 409,
+                    message: 'Ce numéro de téléphone existe déjà',
+                },
             });
         }
 
@@ -55,18 +67,24 @@ const create = async (req, res) => {
             phone: req.body.phone,
         });
 
+        const newCustomer = await CustomerModel.findById(result[0]);
         return res.status(201).json({
             success: true,
             data: {
-                id: result[0],
-                firstname: req.body.firstname,
-                phone: req.body.phone,
+                id: newCustomer.id,
+                firstname: newCustomer.firstname,
+                phone: newCustomer.phone,
+                points_balance: newCustomer.points_balance,
+                created_at: newCustomer.created_at,
             },
         });
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -78,7 +96,10 @@ const update = async (req, res) => {
         if (!updated) {
             return res.status(404).json({
                 success: false,
-                error: 'Client non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Client non trouvé',
+                },
             });
         }
 
@@ -91,7 +112,10 @@ const update = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };

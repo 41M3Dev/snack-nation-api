@@ -11,7 +11,10 @@ const getAll = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -27,7 +30,10 @@ const getAllAdmins = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 }
@@ -39,7 +45,10 @@ const getById = async (req, res) => {
         if (!product) {
             return res.status(404).json({
                 success: false,
-                error: 'Produit non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Produit non trouvé',
+                },
             });
         }
 
@@ -50,7 +59,10 @@ const getById = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -69,7 +81,10 @@ const create = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -81,7 +96,10 @@ const update = async (req, res) => {
         if (!updated) {
             return res.status(404).json({
                 success: false,
-                error: 'Produit non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Produit non trouvé',
+                },
             });
         }
 
@@ -94,7 +112,10 @@ const update = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -108,7 +129,10 @@ const remove = async (req, res) => {
         if (!deleted) {
             return res.status(404).json({
                 success: false,
-                error: 'Produit non trouvé',
+                error: {
+                    code: 404,
+                    message: 'Produit non trouvé',
+                },
             });
         }
 
@@ -121,7 +145,10 @@ const remove = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
