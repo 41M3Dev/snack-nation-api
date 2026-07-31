@@ -4,6 +4,8 @@
  */
 exports.seed = async function(knex) {
 
+    await knex('products').del();
+
     // Reset auto increment
     await knex.raw('ALTER TABLE products AUTO_INCREMENT = 1');
 
@@ -88,6 +90,24 @@ exports.seed = async function(knex) {
             category: "sauce",
             image: "mayo.jpg",
             has_size_option: 0,
+            is_available: 1
+        },
+        {
+            name: "Veggie Burger",
+            description: "Burger végétarien avec galette de légumes",
+            price: 9.50,
+            category: "burger",
+            image: "veggie-burger.jpg",
+            has_size_option: 1,
+            is_available: 1
+        },
+        {
+            name: "Fish Burger",
+            description: "Burger au poisson pané et sauce tartare",
+            price: 9.50,
+            category: "burger",
+            image: "fish-burger.jpg",
+            has_size_option: 1,
             is_available: 1
         }
     ]);
