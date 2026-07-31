@@ -5,7 +5,10 @@ const authenticate =(req, res,next) => {
     if (!authHeader ) {
         return res.status(401).json({
             success: false,
-            message: 'Token manquant',
+            error: {
+                code: 401,
+                message: 'Token manquant',
+            },
         });
     }
     const token = authHeader.split(' ')[1];
@@ -17,7 +20,10 @@ const authenticate =(req, res,next) => {
     }catch(err){
         res.status(401).json({
             success: false,
-            message: 'Token invalide',
+            error: {
+                code: 401,
+                message: 'Token invalide',
+            },
         })
     }
 }
@@ -26,14 +32,20 @@ const authorize = (...roles) => {
         if (!req.user) {
             return res.status(401).json({
                 success: false,
-                error: 'Non authentifié',
+                error: {
+                    code: 401,
+                    message: 'Non authentifié',
+                },
             });
         }
 
         if (!roles.includes(req.user.role)) {
             return res.status(403).json({
                 success: false,
-                error: 'Accès interdit',
+                error: {
+                    code: 403,
+                    message: 'Accès interdit',
+                },
             });
         }
 

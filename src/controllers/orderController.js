@@ -28,7 +28,10 @@ const create = async (req, res) => {
                 if (!product) {
                     return res.status(404).json({
                         success: false,
-                        error: 'Produit non trouvé',
+                        error: {
+                            code: 404,
+                            message: 'Produit non trouvé',
+                        },
                     });
                 }
 
@@ -53,7 +56,10 @@ const create = async (req, res) => {
                 if (!menu) {
                     return res.status(404).json({
                         success: false,
-                        error: 'Menu non trouvé',
+                        error: {
+                            code: 404,
+                            message: 'Menu non trouvé',
+                        },
                     });
                 }
 
@@ -98,7 +104,10 @@ const create = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -114,7 +123,10 @@ const getAll = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -126,7 +138,10 @@ const getById = async (req, res) => {
         if (!order) {
             return res.status(404).json({
                 success: false,
-                error: 'Commande non trouvée',
+                error: {
+                    code: 404,
+                    message: 'Commande non trouvée',
+                },
             });
         }
         
@@ -154,7 +169,10 @@ const getById = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
@@ -168,7 +186,10 @@ const updateStatus = async (req, res) => {
         if (!updated) {
             return res.status(404).json({
                 success: false,
-                error: 'Commande non trouvée',
+                error: {
+                    code: 404,
+                    message: 'Commande non trouvée',
+                },
             });
         }
 
@@ -181,7 +202,10 @@ const updateStatus = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };

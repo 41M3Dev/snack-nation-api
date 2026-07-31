@@ -5,7 +5,10 @@ const validate = (req, res, next) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({
             success: false,
-            error: errors.array()[0].msg,
+            error: {
+                code: 400,
+                message: errors.array()[0].msg,
+            },
         });
     }
     next();

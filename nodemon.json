@@ -1,0 +1,15 @@
+{
+  "watch": ["app.js", "src"],
+  "ext": "js,json",
+  "ignore": [
+    "node_modules",
+    ".idea",
+    ".git",
+    ".DS_Store",
+    "*.log",
+    ".env",
+    ".env.example",
+    "package-lock.json"
+  ],
+  "delay": 1500
+}

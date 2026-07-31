@@ -11,7 +11,10 @@ const login = async (req, res) => {
         if (!user) {
             return res.status(401).json({
                 success: false,
-                error: 'Email ou mot de passe incorrect',
+                error: {
+                    code: 401,
+                    message: 'Email ou mot de passe incorrect',
+                },
             });
         }
 
@@ -20,7 +23,10 @@ const login = async (req, res) => {
         if (!isMatch) {
             return res.status(401).json({
                 success: false,
-                error: 'Email ou mot de passe incorrect',
+                error: {
+                    code: 401,
+                    message: 'Email ou mot de passe incorrect',
+                },
             });
         }
 
@@ -52,7 +58,10 @@ const login = async (req, res) => {
     } catch (error) {
         return res.status(500).json({
             success: false,
-            error: error.message,
+            error: {
+                code: 500,
+                message: error.message,
+            },
         });
     }
 };
