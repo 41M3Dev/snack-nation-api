@@ -11,6 +11,7 @@ const orderRoutes = require('./src/routes/orders');
 const customerRoutes = require('./src/routes/customers');
 const rewardRoutes = require('./src/routes/rewards');
 const loyaltyConfigRoutes = require('./src/routes/loyaltyConfig');
+const loyaltyTransactionRoutes = require('./src/routes/loyaltyTransactions');
 
 app.use(cors());
 app.use(express.json());
@@ -22,6 +23,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/customers', customerRoutes);
 app.use('/api/rewards', rewardRoutes);
 app.use('/api/loyalty-config', loyaltyConfigRoutes);
+app.use('/api/loyalty-transactions', loyaltyTransactionRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
