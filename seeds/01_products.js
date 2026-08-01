@@ -17,7 +17,7 @@ exports.seed = async function(knex) {
             price: 8.50,
             category: "burger",
             image: "burger1.jpg",
-            has_size_option: 1,
+            has_size_option: 0,
             is_available: 1
         },
         {
@@ -26,7 +26,7 @@ exports.seed = async function(knex) {
             price: 9.50,
             category: "burger",
             image: "burger2.jpg",
-            has_size_option: 1,
+            has_size_option: 0,
             is_available: 1
         },
         {
@@ -35,7 +35,7 @@ exports.seed = async function(knex) {
             price: 9.00,
             category: "burger",
             image: "burger3.jpg",
-            has_size_option: 1,
+            has_size_option: 0,
             is_available: 1
         },
         {
@@ -98,7 +98,7 @@ exports.seed = async function(knex) {
             price: 9.50,
             category: "burger",
             image: "veggie-burger.jpg",
-            has_size_option: 1,
+            has_size_option: 0,
             is_available: 1
         },
         {
@@ -107,7 +107,7 @@ exports.seed = async function(knex) {
             price: 9.50,
             category: "burger",
             image: "fish-burger.jpg",
-            has_size_option: 1,
+            has_size_option: 0,
             is_available: 1
         }
     ]);
