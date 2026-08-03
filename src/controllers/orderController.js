@@ -94,11 +94,60 @@ const create = async (req, res) => {
             }
         }
 
+        // Calcul et crédit des points fidélité (si client identifié)
+        let pointsEarned = 0;
+        let newBalance = null;
+
+        if (customer_id) {
+            // Récupérer le taux de conversion depuis loyalty_config
+            const config = await OrderModel.db('loyalty_config')
+                .where({ config_key: 'points_per_euro' })
+                .first();
+            const pointsPerEuro = config ? Number(config.config_value) : 2;
+
+            // Calculer les points (CDC §5.2 : partie entière uniquement)
+            pointsEarned = Math.floor(Number(total)) * pointsPerEuro;
+
+            // Récupérer le solde actuel du client
+            const customer = await OrderModel.db('customers')
+                .where({ id: customer_id })
+                .first();
+
+            if (customer) {
+                newBalance = Number(customer.points_balance) + pointsEarned;
+
+                // Créditer le compte client
+                await OrderModel.db('customers')
+                    .where({ id: customer_id })
+                    .update({
+                        points_balance: newBalance,
+                        last_activity_at: new Date(),
+                    });
+
+                // Enregistrer la transaction pour audit
+                await OrderModel.db('loyalty_transactions').insert({
+                    customer_id,
+                    order_id: orderId,
+                    type: 'earn',
+                    points: pointsEarned,
+                    balance_after: newBalance,
+                    description: `Commande ${orderNumber}`,
+                });
+            }
+        }
+
+        // Mettre à jour la colonne points_earned de la commande
+        await OrderModel.db('orders')
+            .where({ id: orderId })
+            .update({ points_earned: pointsEarned });
+
         return res.status(201).json({
             success: true,
             data: {
                 id: orderId,
                 order_number: orderNumber,
+                points_earned: pointsEarned,
+                new_balance: newBalance,
             },
         });
     } catch (error) {
