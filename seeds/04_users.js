@@ -14,28 +14,28 @@ exports.seed = async function(knex) {
     await knex('users').insert([
         {
             name: "Admin Principal",
-            email: "admin@wakdo.com",
+            email: "admin@snacknation.com",
             password: password,
             role: "administration",
             is_active: 1
         },
         {
             name: "Employé Cuisine",
-            email: "cuisine@wakdo.com",
+            email: "cuisine@snacknation.com",
             password: password,
             role: "preparation",
             is_active: 1
         },
         {
             name: "Employé Accueil",
-            email: "accueil@wakdo.com",
+            email: "accueil@snacknation.com",
             password: password,
             role: "accueil",
             is_active: 1
         },
         {
             name: "Test User",
-            email: "test@wakdo.com",
+            email: "test@snacknation.com",
             password: password,
             role: "accueil",
             is_active: 0

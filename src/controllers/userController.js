@@ -1,8 +1,47 @@
 const UserModel = require('../models/UserModel');
 const bcrypt = require('bcrypt');
-const getAllAdmin = async (req, res) => {
+
+const getAllAdminActive = async (req, res) => {
     try {
         const users = await UserModel.findAllActive();
+
+        return res.status(200).json({
+            success: true,
+            data: users,
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: 500,
+                message: error.message,
+            },
+        });
+    }
+};
+
+const getAllAdmin = async (req, res) => {
+    try {
+        const users = await UserModel.findAll();
+
+        return res.status(200).json({
+            success: true,
+            data: users,
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: 500,
+                message: error.message,
+            },
+        });
+    }
+};
+
+const getAllAdminNoActive = async (req, res) => {
+    try {
+        const users = await UserModel.findAllNoActive();
 
         return res.status(200).json({
             success: true,
@@ -181,4 +220,4 @@ const remove = async (req, res) => {
     }
 };
 
-module.exports = {getAllAdmin,getById, create, update, remove, getByEmail};
+module.exports = {getAllAdmin,getAllAdminActive,getAllAdminNoActive,getById, create, update, remove, getByEmail};
