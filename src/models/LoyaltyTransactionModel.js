@@ -19,7 +19,18 @@ class LoyaltyTransactionModel extends BaseModel {
                 throw new Error('Client non trouvé');
             }
 
-            const delta = type === 'redeem' ? -Math.abs(points) : Math.abs(points);
+            // 'redeem' retire toujours des points, 'adjust' garde le signe fourni
+            // (ajout ou retrait manuel), 'earn' ajoute toujours des points.
+            let delta;
+            if (type === 'redeem') {
+                delta = -Math.abs(points);
+            } else if (type === 'adjust') {
+                delta = points;
+            } else {
+                delta = Math.abs(points);
+            }
+
+
             const balanceAfter = customer.points_balance + delta;
 
             if (balanceAfter < 0) {
