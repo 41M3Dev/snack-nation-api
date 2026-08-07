@@ -4,7 +4,7 @@
  */
 exports.seed = async function(knex) {
 
-    const password = "$2b$10$bb2z8ga0U6BUaj4K2BvZduIgK.4WTr2H7msCmV9ktK3isx8qAXRc.";
+    const password = "$2b$10$sAP0eChQAxKgHIi0fCvhC.r8VKLrYajMpYsqPHoNeuI/MJyRYnBlC";
 
 
     // Reset auto increment
