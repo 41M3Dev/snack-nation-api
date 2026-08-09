@@ -2,6 +2,9 @@ require('dotenv').config({ path: __dirname + '/.env' });
 
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const xss = require('xss-clean');
 
 const app = express();
 
@@ -17,6 +20,20 @@ const loyaltyTransactionRoutes = require('./src/routes/loyaltyTransactions');
 
 app.use(cors());
 app.use(express.json());
+
+// Sécurité headers HTTP
+app.use(helmet());
+
+// Protection contre le brute force / DDoS
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // 100 requêtes max par IP
+    message: { success: false, error: { code: 429, message: 'Trop de requêtes, réessayez plus tard.' } },
+});
+app.use(limiter);
+
+// Nettoyage anti-XSS
+app.use(xss());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
