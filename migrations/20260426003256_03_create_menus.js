@@ -7,6 +7,7 @@ exports.up = function(knex) {
         table.increments('id').primary();
         table.string('name', 150).notNullable();
         table.decimal('price_base', 10, 2).notNullable();
+        table.string('image',255);
         table.tinyint('is_active').notNullable().defaultTo(1);
         table.datetime('created_at').notNullable().defaultTo(knex.fn.now());
         table.datetime('updated_at').defaultTo(knex.fn.now());
