@@ -14,37 +14,37 @@ exports.seed = async function(knex) {
             name: "Menu Classic",
             price_base: 10.50,
             is_active: 1,
-            image: "cheeseburger-fondant-simple.png"
+            image: "src/images/cheeseburger-fondant-simple.png"
 
         },
         {
             name: "Menu Cheese",
             price_base: 11.50,
-            image: "double-cheeseburger-fondant.png",
+            image: "src/images/double-cheeseburger-fondant.png",
             is_active: 1
         },
         {
             name: "Menu Chicken",
             price_base: 11.00,
-            image: "burger-poulet-croustillant.png",
+            image: "src/images/burger-poulet-croustillant.png",
             is_active: 1
         },
         {
             name: "Menu Maxi",
             price_base: 13.50,
-            image: "burger-poulet-croustillant.png",
+            image: "src/images/burger-poulet-croustillant.png",
             is_active: 1
         },
         {
             name: "Menu Enfant",
             price_base: 7.50,
-            image: "cheeseburger-fondant-simple.png",
+            image: "src/images/cheeseburger-fondant-simple.png",
             is_active: 1
         },
         {
             name: "Menu Veggie",
             price_base: 10.00,
-            image: "tresor-marin.png",
+            image: "src/images/tresor-marin.png",
             is_active: 1
         }
     ]);
