@@ -79,7 +79,7 @@ exports.seed = async function(knex) {
             description: "Bouteille d'eau",
             price: 1.50,
             category: "boisson",
-            image: "eau.png",
+            image: "https://images.unsplash.com/photo-1553564552-02656d6a2390?q=80&w=1315&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             has_size_option: 0,
             is_available: 1
         },
@@ -88,7 +88,7 @@ exports.seed = async function(knex) {
             description: "Sauce ketchup",
             price: 0,
             category: "sauce",
-            image: "ketchup.png",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdNljZTtQMKREquIg6iZyDbbAPIOqw0JzC5l9UPQnkgeI7IGzABbS8ZDw&s=10",
             has_size_option: 0,
             is_available: 1
         },
@@ -97,7 +97,7 @@ exports.seed = async function(knex) {
             description: "Sauce mayonnaise",
             price: 0,
             category: "sauce",
-            image: "mayo.png",
+            image: "https://www.yopongoelhielo.com/4105/mayonnaise-originale-heinz.jpg",
             has_size_option: 0,
             is_available: 1
         },
