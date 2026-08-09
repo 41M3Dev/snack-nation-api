@@ -12,20 +12,20 @@ exports.seed = async function(knex) {
     // Insert fake data
     await knex('products').insert([
         {
-            name: "Classic Burger",
+            name: "Cheese Burger",
             description: "Burger classique avec steak, salade, tomate et fromage",
             price: 8.50,
             category: "burger",
-            image: "burger1.jpg",
+            image: "cheeseburger-fondant-simple.jpg",
             has_size_option: 0,
             is_available: 1
         },
         {
-            name: "Cheese Burger",
+            name: "Double Cheese Burger",
             description: "Burger avec double fromage fondant",
             price: 9.50,
             category: "burger",
-            image: "burger2.jpg",
+            image: "double-cheeseburger-fondant.jpg",
             has_size_option: 0,
             is_available: 1
         },
@@ -34,7 +34,7 @@ exports.seed = async function(knex) {
             description: "Burger au poulet croustillant",
             price: 9.00,
             category: "burger",
-            image: "burger3.jpg",
+            image: "burger-poulet-croustillant.jpg",
             has_size_option: 0,
             is_available: 1
         },
@@ -43,25 +43,34 @@ exports.seed = async function(knex) {
             description: "Frites croustillantes",
             price: 3.00,
             category: "accompagnement",
-            image: "fries.jpg",
+            image: "portion-de-frites-classiques.jpg",
             has_size_option: 1,
             is_available: 1
         },
         {
-            name: "Nuggets",
-            description: "6 nuggets de poulet",
-            price: 4.50,
+            name: "Frites Chedar",
+            description: "Frites croustillantes au chedar",
+            price: 4.00,
             category: "accompagnement",
-            image: "nuggets.jpg",
+            image: "portion-de-frites-cheddar.jpg",
+            has_size_option: 1,
+            is_available: 1
+        },
+        {
+            name: "Crousti Cesar",
+            description: "Une salades césar",
+            price: 3.50,
+            category: "accompagnement",
+            image: "la-crousti-cesar.jpg",
             has_size_option: 0,
             is_available: 1
         },
         {
-            name: "Coca-Cola",
+            name: "Sprite",
             description: "Boisson gazeuse",
             price: 2.50,
             category: "boisson",
-            image: "coca.jpg",
+            image: "sprite.jpg",
             has_size_option: 1,
             is_available: 1
         },
@@ -70,7 +79,7 @@ exports.seed = async function(knex) {
             description: "Bouteille d'eau",
             price: 1.50,
             category: "boisson",
-            image: "water.jpg",
+            image: "eau.jpg",
             has_size_option: 0,
             is_available: 1
         },
@@ -97,7 +106,7 @@ exports.seed = async function(knex) {
             description: "Burger végétarien avec galette de légumes",
             price: 9.50,
             category: "burger",
-            image: "veggie-burger.jpg",
+            image: "spicy-avocado-black-bean-burger.jpg",
             has_size_option: 0,
             is_available: 1
         },
@@ -106,7 +115,7 @@ exports.seed = async function(knex) {
             description: "Burger au poisson pané et sauce tartare",
             price: 9.50,
             category: "burger",
-            image: "fish-burger.jpg",
+            image: "tresor-marin.jpg",
             has_size_option: 0,
             is_available: 1
         }
