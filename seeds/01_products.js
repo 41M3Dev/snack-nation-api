@@ -16,7 +16,7 @@ exports.seed = async function(knex) {
             description: "Burger classique avec steak, salade, tomate et fromage",
             price: 8.50,
             category: "burger",
-            image: "cheeseburger-fondant-simple.png",
+            image: "cheeseburger-fondant-simple.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -25,7 +25,7 @@ exports.seed = async function(knex) {
             description: "Burger avec double fromage fondant",
             price: 9.50,
             category: "burger",
-            image: "double-cheeseburger-fondant.png",
+            image: "double-cheeseburger-fondant.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -34,7 +34,7 @@ exports.seed = async function(knex) {
             description: "Burger au poulet croustillant",
             price: 9.00,
             category: "burger",
-            image: "burger-poulet-croustillant.png",
+            image: "burger-poulet-croustillant.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -43,7 +43,7 @@ exports.seed = async function(knex) {
             description: "Frites croustillantes",
             price: 3.00,
             category: "accompagnement",
-            image: "portion-de-frites-classiques.png",
+            image: "portion-de-frites-classiques.webp",
             has_size_option: 1,
             is_available: 1
         },
@@ -52,7 +52,7 @@ exports.seed = async function(knex) {
             description: "Frites croustillantes au chedar",
             price: 4.00,
             category: "accompagnement",
-            image: "portion-de-frites-cheddar.png",
+            image: "portion-de-frites-cheddar.webp",
             has_size_option: 1,
             is_available: 1
         },
@@ -61,7 +61,7 @@ exports.seed = async function(knex) {
             description: "Une salades césar",
             price: 3.50,
             category: "accompagnement",
-            image: "la-crousti-cesar.png",
+            image: "la-crousti-cesar.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -70,7 +70,7 @@ exports.seed = async function(knex) {
             description: "Boisson gazeuse",
             price: 2.50,
             category: "boisson",
-            image: "sprite.png",
+            image: "sprite.webp",
             has_size_option: 1,
             is_available: 1
         },
@@ -79,7 +79,7 @@ exports.seed = async function(knex) {
             description: "Bouteille d'eau",
             price: 1.50,
             category: "boisson",
-            image: "eau.png",
+            image: "eau.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -88,7 +88,7 @@ exports.seed = async function(knex) {
             description: "Sauce ketchup",
             price: 0,
             category: "sauce",
-            image: "ketchup.png",
+            image: "ketchup.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -97,7 +97,7 @@ exports.seed = async function(knex) {
             description: "Sauce mayonnaise",
             price: 0,
             category: "sauce",
-            image: "mayo.png",
+            image: "mayo.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -106,7 +106,7 @@ exports.seed = async function(knex) {
             description: "Burger végétarien avec galette de légumes",
             price: 9.50,
             category: "burger",
-            image: "spicy-avocado-black-bean-burger.png",
+            image: "spicy-avocado-black-bean-burger.webp",
             has_size_option: 0,
             is_available: 1
         },
@@ -115,7 +115,7 @@ exports.seed = async function(knex) {
             description: "Burger au poisson pané et sauce tartare",
             price: 9.50,
             category: "burger",
-            image: "tresor-marin.png",
+            image: "tresor-marin.webp",
             has_size_option: 0,
             is_available: 1
         }
