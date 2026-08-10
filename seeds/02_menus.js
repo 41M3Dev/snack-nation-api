@@ -14,7 +14,7 @@ exports.seed = async function(knex) {
             name: "Menu Classic",
             price_base: 10.50,
             is_active: 1,
-            image: "src/images/cheeseburger-fondant-simple.webop"
+            image: "src/images/cheeseburger-fondant-simple.webp"
 
         },
         {
