@@ -4,6 +4,8 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./src/config/swagger');
 
 const app = express();
 
@@ -19,6 +21,15 @@ const loyaltyTransactionRoutes = require('./src/routes/loyaltyTransactions');
 
 app.use(cors());
 app.use(express.json());
+
+// Documentation Swagger (montée avant le helmet() global, sinon sa CSP
+// stricte bloque les scripts/styles inline utilisés par swagger-ui)
+app.use(
+    '/api-docs',
+    helmet({ contentSecurityPolicy: false }),
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec)
+);
 
 // Sécurité headers HTTP
 app.use(helmet());
