@@ -137,6 +137,10 @@ Chaque route protegee precise les roles autorises via le middleware authorize(..
 
 ## Documentation de l'API
 
+Une documentation interactive Swagger est disponible sur :
+
+    http://localhost:3000/api-docs
+
 Base URL : /api
 
 ### Auth (/api/auth)
